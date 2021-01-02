@@ -112,3 +112,6 @@ fabric.properties
 
 # Google oauth2
 application-oauth.properties
+
+# MySQL
+application-mysql.properties
