@@ -39,4 +39,9 @@ public class Users {
         this.age = age;
     }
 
+    public void update(String password, int gender, int age) {
+        this.password = password;
+        this.gender = gender;
+        this.age = age;
+    }
 }
