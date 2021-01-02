@@ -5,11 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import com.najinji.ohmymoneyserver.domain.BaseTimeEntity;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Users {
+public class Users extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
