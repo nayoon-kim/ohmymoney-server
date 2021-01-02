@@ -1,25 +1,41 @@
-com/najinji/ohmymoneyserver/web/dto/UsersUpdateRequestDto.java
- com.najinji.ohmymoneyserver.web.dto.UsersUpdateRequestDto
- com.najinji.ohmymoneyserver.web.dto.UsersUpdateRequestDto$UsersUpdateRequestDtoBuilder
-com/najinji/ohmymoneyserver/web/dto/HelloResponseDto.java
- com.najinji.ohmymoneyserver.web.dto.HelloResponseDto
-com/najinji/ohmymoneyserver/web/RecommenderController.java
- com.najinji.ohmymoneyserver.web.RecommenderController
 com/najinji/ohmymoneyserver/domain/users/UsersRepository.java
  com.najinji.ohmymoneyserver.domain.users.UsersRepository
 com/najinji/ohmymoneyserver/domain/users/Users.java
  com.najinji.ohmymoneyserver.domain.users.Users
  com.najinji.ohmymoneyserver.domain.users.Users$UsersBuilder
-com/najinji/ohmymoneyserver/web/dto/UsersSaveRequestDto.java
- com.najinji.ohmymoneyserver.web.dto.UsersSaveRequestDto
- com.najinji.ohmymoneyserver.web.dto.UsersSaveRequestDto$UsersSaveRequestDtoBuilder
 com/najinji/ohmymoneyserver/web/dto/UsersResponseDto.java
  com.najinji.ohmymoneyserver.web.dto.UsersResponseDto
-com/najinji/ohmymoneyserver/service/users/UsersService.java
- com.najinji.ohmymoneyserver.service.users.UsersService
+com/najinji/ohmymoneyserver/config/auth/SecurityConfig.java
+ com.najinji.ohmymoneyserver.config.auth.SecurityConfig
 com/najinji/ohmymoneyserver/OhmymoneyServerApplication.java
  com.najinji.ohmymoneyserver.OhmymoneyServerApplication
 com/najinji/ohmymoneyserver/web/UsersApiController.java
  com.najinji.ohmymoneyserver.web.UsersApiController
+com/najinji/ohmymoneyserver/domain/user/UserRepository.java
+ com.najinji.ohmymoneyserver.domain.user.UserRepository
+com/najinji/ohmymoneyserver/config/auth/dto/SessionUser.java
+ com.najinji.ohmymoneyserver.config.auth.dto.SessionUser
 com/najinji/ohmymoneyserver/domain/BaseTimeEntity.java
  com.najinji.ohmymoneyserver.domain.BaseTimeEntity
+com/najinji/ohmymoneyserver/web/dto/HelloResponseDto.java
+ com.najinji.ohmymoneyserver.web.dto.HelloResponseDto
+com/najinji/ohmymoneyserver/config/auth/CustomOAuth2UserService.java
+ com.najinji.ohmymoneyserver.config.auth.CustomOAuth2UserService
+com/najinji/ohmymoneyserver/web/dto/UsersSaveRequestDto.java
+ com.najinji.ohmymoneyserver.web.dto.UsersSaveRequestDto
+ com.najinji.ohmymoneyserver.web.dto.UsersSaveRequestDto$UsersSaveRequestDtoBuilder
+com/najinji/ohmymoneyserver/domain/user/User.java
+ com.najinji.ohmymoneyserver.domain.user.User
+ com.najinji.ohmymoneyserver.domain.user.User$UserBuilder
+com/najinji/ohmymoneyserver/service/users/UsersService.java
+ com.najinji.ohmymoneyserver.service.users.UsersService
+com/najinji/ohmymoneyserver/web/RecommenderController.java
+ com.najinji.ohmymoneyserver.web.RecommenderController
+com/najinji/ohmymoneyserver/config/auth/dto/OAuthAttributes.java
+ com.najinji.ohmymoneyserver.config.auth.dto.OAuthAttributes
+ com.najinji.ohmymoneyserver.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
+com/najinji/ohmymoneyserver/domain/user/Role.java
+ com.najinji.ohmymoneyserver.domain.user.Role
+com/najinji/ohmymoneyserver/web/dto/UsersUpdateRequestDto.java
+ com.najinji.ohmymoneyserver.web.dto.UsersUpdateRequestDto
+ com.najinji.ohmymoneyserver.web.dto.UsersUpdateRequestDto$UsersUpdateRequestDtoBuilder
