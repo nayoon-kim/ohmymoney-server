@@ -1,10 +1,12 @@
-com/najinji/ohmymoneyserver/OhmymoneyServerApplicationTests.java
- com.najinji.ohmymoneyserver.OhmymoneyServerApplicationTests
-com/najinji/ohmymoneyserver/web/dto/HelloResponseDtoTest.java
- com.najinji.ohmymoneyserver.web.dto.HelloResponseDtoTest
 com/najinji/ohmymoneyserver/web/RecommenderControllerTest.java
  com.najinji.ohmymoneyserver.web.RecommenderControllerTest
 com/najinji/ohmymoneyserver/web/UsersApiControllerTest.java
  com.najinji.ohmymoneyserver.web.UsersApiControllerTest
 com/najinji/ohmymoneyserver/domain/users/UsersRepositoryTest.java
  com.najinji.ohmymoneyserver.domain.users.UsersRepositoryTest
+com/najinji/ohmymoneyserver/web/dto/HelloResponseDtoTest.java
+ com.najinji.ohmymoneyserver.web.dto.HelloResponseDtoTest
+com/najinji/ohmymoneyserver/OhmymoneyServerApplicationTests.java
+ com.najinji.ohmymoneyserver.OhmymoneyServerApplicationTests
+com/najinji/ohmymoneyserver/web/UserApiControllerTest.java
+ com.najinji.ohmymoneyserver.web.UserApiControllerTest
