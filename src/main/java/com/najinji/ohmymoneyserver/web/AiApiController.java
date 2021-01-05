@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
 
 import org.springframework.http.HttpHeaders;
@@ -20,11 +21,11 @@ public class AiApiController {
     private RestTemplate restTemplate;
 
     @PostMapping("/api/v1/ai")
-    public String display() {
+    public String display(@RequestBody String place) {
         String input = ("{\n" +
                 "\"name\": " +
-                "경복궁" +
-                "}");
+                "\""+place+"\"" +
+                "\n}");
         String url = "http://localhost:5000/recommender";
 
         HttpHeaders headers = new HttpHeaders();
@@ -32,8 +33,7 @@ public class AiApiController {
 
         HttpEntity param = new HttpEntity(input, headers);
 
-//        landmark: name: "경복궁"
-        String result = restTemplate.postForObject(url, "경복궁", String.class);
+        String result = restTemplate.postForObject(url, param, String.class);
 
         return result;
     }

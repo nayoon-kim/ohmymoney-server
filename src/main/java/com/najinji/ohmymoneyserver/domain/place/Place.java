@@ -22,6 +22,10 @@ public class Place extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Category category;
+
     @Column(nullable = false)
     private String name;
 
@@ -34,17 +38,13 @@ public class Place extends BaseTimeEntity {
     @Column(nullable = false)
     private String tag;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Category category;
-
     @Builder
-    public Place(String name, String address, String newAddress, String phone, String tag, Category category) {
+    public Place(Category category, String name, String address, String newAddress, String phone, String tag) {
+        this.category = category;
         this.name = name;
         this.address = newAddress;
         this.phone = phone;
         this.tag = tag;
-        this.category = category;
     }
 
     public String getCategoryKey() {
