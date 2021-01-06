@@ -115,3 +115,6 @@ application-oauth.properties
 
 # MySQL
 application-mysql.properties
+
+# Querydsl의 QClass를 담는 src/main/generated는 자동생성되는 파일들의 디렉토리
+generated
