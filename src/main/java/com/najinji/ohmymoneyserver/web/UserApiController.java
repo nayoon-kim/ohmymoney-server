@@ -1,9 +1,9 @@
 package com.najinji.ohmymoneyserver.web;
 
 import com.najinji.ohmymoneyserver.service.user.UserService;
-import com.najinji.ohmymoneyserver.web.dto.UserSaveRequestDto;
-import com.najinji.ohmymoneyserver.web.dto.UserUpdateRequestDto;
-import com.najinji.ohmymoneyserver.web.dto.UserResponseDto;
+import com.najinji.ohmymoneyserver.web.dto.user.UserSaveRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.user.UserUpdateRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.user.UserResponseDto;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;

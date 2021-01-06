@@ -47,6 +47,14 @@ public class Place extends BaseTimeEntity {
         this.tag = tag;
     }
 
+    public Place update(String name, String address, String phone, String tag) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.tag = tag;
+        return this;
+    }
+
     public String getCategoryKey() {
         return this.category.getKey();
     }

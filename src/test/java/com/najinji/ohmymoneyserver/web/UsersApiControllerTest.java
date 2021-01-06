@@ -2,8 +2,8 @@ package com.najinji.ohmymoneyserver.web;
 
 import com.najinji.ohmymoneyserver.domain.users.Users;
 import com.najinji.ohmymoneyserver.domain.users.UsersRepository;
-import com.najinji.ohmymoneyserver.web.dto.UsersSaveRequestDto;
-import com.najinji.ohmymoneyserver.web.dto.UsersUpdateRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.users.UsersSaveRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.users.UsersUpdateRequestDto;
 
 import org.junit.After;
 import org.junit.Test;

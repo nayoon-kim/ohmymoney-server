@@ -2,9 +2,9 @@ package com.najinji.ohmymoneyserver.service.user;
 
 import com.najinji.ohmymoneyserver.domain.user.User;
 import com.najinji.ohmymoneyserver.domain.user.UserRepository;
-import com.najinji.ohmymoneyserver.web.dto.UserSaveRequestDto;
-import com.najinji.ohmymoneyserver.web.dto.UserUpdateRequestDto;
-import com.najinji.ohmymoneyserver.web.dto.UserResponseDto;
+import com.najinji.ohmymoneyserver.web.dto.user.UserSaveRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.user.UserUpdateRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.user.UserResponseDto;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

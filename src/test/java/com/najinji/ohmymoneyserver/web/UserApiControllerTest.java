@@ -2,7 +2,7 @@ package com.najinji.ohmymoneyserver.web;
 
 import com.najinji.ohmymoneyserver.domain.user.Role;
 import com.najinji.ohmymoneyserver.domain.user.UserRepository;
-import com.najinji.ohmymoneyserver.web.dto.UserSaveRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.user.UserSaveRequestDto;
 import com.najinji.ohmymoneyserver.domain.user.User;
 
 import org.junit.After;
@@ -16,8 +16,6 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;

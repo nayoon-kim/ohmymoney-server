@@ -2,9 +2,9 @@ package com.najinji.ohmymoneyserver.service.users;
 
 import com.najinji.ohmymoneyserver.domain.users.UsersRepository;
 
-import com.najinji.ohmymoneyserver.web.dto.UsersSaveRequestDto;
-import com.najinji.ohmymoneyserver.web.dto.UsersUpdateRequestDto;
-import com.najinji.ohmymoneyserver.web.dto.UsersResponseDto;
+import com.najinji.ohmymoneyserver.web.dto.users.UsersSaveRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.users.UsersUpdateRequestDto;
+import com.najinji.ohmymoneyserver.web.dto.users.UsersResponseDto;
 import com.najinji.ohmymoneyserver.domain.users.Users;
 
 import lombok.RequiredArgsConstructor;
