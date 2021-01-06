@@ -19,7 +19,7 @@ public class UserApiController {
 
     private final UserService userService;
 
-    @PostMapping("/api/v1/user")
+    @PostMapping("/api/v1/user-api")
     public Long save(@RequestBody UserSaveRequestDto requestDto) {
         return userService.save(requestDto);
     }
