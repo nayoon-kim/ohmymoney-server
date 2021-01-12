@@ -10,54 +10,72 @@ com/najinji/ohmymoneyserver/web/UsersApiController.java
  com.najinji.ohmymoneyserver.web.UsersApiController
 com/najinji/ohmymoneyserver/config/auth/dto/SessionUser.java
  com.najinji.ohmymoneyserver.config.auth.dto.SessionUser
-com/najinji/ohmymoneyserver/web/dto/UserUpdateRequestDto.java
- com.najinji.ohmymoneyserver.web.dto.UserUpdateRequestDto
- com.najinji.ohmymoneyserver.web.dto.UserUpdateRequestDto$UserUpdateRequestDtoBuilder
+com/najinji/ohmymoneyserver/web/UrlController.java
+ com.najinji.ohmymoneyserver.web.UrlController
 com/najinji/ohmymoneyserver/config/QuerydslConfiguration.java
  com.najinji.ohmymoneyserver.config.QuerydslConfiguration
-com/najinji/ohmymoneyserver/web/AiApiController.java
- com.najinji.ohmymoneyserver.web.AiApiController
+com/najinji/ohmymoneyserver/web/UserApiController.java
+ com.najinji.ohmymoneyserver.web.UserApiController
 com/najinji/ohmymoneyserver/web/dto/HelloResponseDto.java
  com.najinji.ohmymoneyserver.web.dto.HelloResponseDto
-com/najinji/ohmymoneyserver/web/dto/UsersSaveRequestDto.java
- com.najinji.ohmymoneyserver.web.dto.UsersSaveRequestDto
- com.najinji.ohmymoneyserver.web.dto.UsersSaveRequestDto$UsersSaveRequestDtoBuilder
 com/najinji/ohmymoneyserver/service/users/UsersService.java
  com.najinji.ohmymoneyserver.service.users.UsersService
+com/najinji/ohmymoneyserver/web/dto/users/UsersResponseDto.java
+ com.najinji.ohmymoneyserver.web.dto.users.UsersResponseDto
+com/najinji/ohmymoneyserver/web/dto/place/PlaceResponseDto.java
+ com.najinji.ohmymoneyserver.web.dto.place.PlaceResponseDto
 com/najinji/ohmymoneyserver/web/RecommenderController.java
  com.najinji.ohmymoneyserver.web.RecommenderController
 com/najinji/ohmymoneyserver/domain/place/PlaceRepository.java
  com.najinji.ohmymoneyserver.domain.place.PlaceRepository
-com/najinji/ohmymoneyserver/web/dto/UserSaveRequestDto.java
- com.najinji.ohmymoneyserver.web.dto.UserSaveRequestDto
- com.najinji.ohmymoneyserver.web.dto.UserSaveRequestDto$UserSaveRequestDtoBuilder
-com/najinji/ohmymoneyserver/web/UrlController.java
- com.najinji.ohmymoneyserver.web.UrlController
+com/najinji/ohmymoneyserver/web/dto/place/PlaceUpdateRequestDto.java
+ com.najinji.ohmymoneyserver.web.dto.place.PlaceUpdateRequestDto
+ com.najinji.ohmymoneyserver.web.dto.place.PlaceUpdateRequestDto$PlaceUpdateRequestDtoBuilder
+com/najinji/ohmymoneyserver/domain/users/UsersQueryRepository.java
+ com.najinji.ohmymoneyserver.domain.users.UsersQueryRepository
+com/najinji/ohmymoneyserver/web/PlaceApiController.java
+ com.najinji.ohmymoneyserver.web.PlaceApiController
+com/najinji/ohmymoneyserver/web/AiApiController.java
+ com.najinji.ohmymoneyserver.web.AiApiController
 com/najinji/ohmymoneyserver/domain/users/Users.java
  com.najinji.ohmymoneyserver.domain.users.Users
  com.najinji.ohmymoneyserver.domain.users.Users$UsersBuilder
 com/najinji/ohmymoneyserver/domain/users/QUsers.java
  com.najinji.ohmymoneyserver.domain.users.QUsers
-com/najinji/ohmymoneyserver/web/dto/UsersResponseDto.java
- com.najinji.ohmymoneyserver.web.dto.UsersResponseDto
+com/najinji/ohmymoneyserver/web/dto/users/UsersSaveRequestDto.java
+ com.najinji.ohmymoneyserver.web.dto.users.UsersSaveRequestDto
+ com.najinji.ohmymoneyserver.web.dto.users.UsersSaveRequestDto$UsersSaveRequestDtoBuilder
 com/najinji/ohmymoneyserver/domain/user/QUser.java
  com.najinji.ohmymoneyserver.domain.user.QUser
 com/najinji/ohmymoneyserver/domain/place/QPlace.java
  com.najinji.ohmymoneyserver.domain.place.QPlace
 com/najinji/ohmymoneyserver/config/auth/SecurityConfig.java
  com.najinji.ohmymoneyserver.config.auth.SecurityConfig
-com/najinji/ohmymoneyserver/web/dto/UserResponseDto.java
- com.najinji.ohmymoneyserver.web.dto.UserResponseDto
+com/najinji/ohmymoneyserver/web/dto/place/PlaceSaveRequestDto.java
+ com.najinji.ohmymoneyserver.web.dto.place.PlaceSaveRequestDto
+ com.najinji.ohmymoneyserver.web.dto.place.PlaceSaveRequestDto$PlaceSaveRequestDtoBuilder
+com/najinji/ohmymoneyserver/web/dto/user/UserSaveRequestDto.java
+ com.najinji.ohmymoneyserver.web.dto.user.UserSaveRequestDto
+ com.najinji.ohmymoneyserver.web.dto.user.UserSaveRequestDto$UserSaveRequestDtoBuilder
+com/najinji/ohmymoneyserver/web/dto/users/UsersUpdateRequestDto.java
+ com.najinji.ohmymoneyserver.web.dto.users.UsersUpdateRequestDto
+ com.najinji.ohmymoneyserver.web.dto.users.UsersUpdateRequestDto$UsersUpdateRequestDtoBuilder
+com/najinji/ohmymoneyserver/service/place/PlaceService.java
+ com.najinji.ohmymoneyserver.service.place.PlaceService
+com/najinji/ohmymoneyserver/web/dto/user/UserResponseDto.java
+ com.najinji.ohmymoneyserver.web.dto.user.UserResponseDto
 com/najinji/ohmymoneyserver/domain/user/UserRepository.java
  com.najinji.ohmymoneyserver.domain.user.UserRepository
 com/najinji/ohmymoneyserver/service/user/UserService.java
  com.najinji.ohmymoneyserver.service.user.UserService
-com/najinji/ohmymoneyserver/web/UserApiController.java
- com.najinji.ohmymoneyserver.web.UserApiController
+com/najinji/ohmymoneyserver/domain/users/UsersRepositorySupport.java
+ com.najinji.ohmymoneyserver.domain.users.UsersRepositorySupport
 com/najinji/ohmymoneyserver/domain/BaseTimeEntity.java
  com.najinji.ohmymoneyserver.domain.BaseTimeEntity
 com/najinji/ohmymoneyserver/config/auth/CustomOAuth2UserService.java
  com.najinji.ohmymoneyserver.config.auth.CustomOAuth2UserService
+com/najinji/ohmymoneyserver/domain/place/PlaceQueryRepository.java
+ com.najinji.ohmymoneyserver.domain.place.PlaceQueryRepository
 com/najinji/ohmymoneyserver/domain/user/User.java
  com.najinji.ohmymoneyserver.domain.user.User
  com.najinji.ohmymoneyserver.domain.user.User$UserBuilder
@@ -69,10 +87,6 @@ com/najinji/ohmymoneyserver/config/auth/dto/OAuthAttributes.java
  com.najinji.ohmymoneyserver.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
 com/najinji/ohmymoneyserver/domain/user/Role.java
  com.najinji.ohmymoneyserver.domain.user.Role
-com/najinji/ohmymoneyserver/web/dto/UsersUpdateRequestDto.java
- com.najinji.ohmymoneyserver.web.dto.UsersUpdateRequestDto
- com.najinji.ohmymoneyserver.web.dto.UsersUpdateRequestDto$UsersUpdateRequestDtoBuilder
-com/najinji/ohmymoneyserver/domain/users/UsersQueryRepository.java
- com.najinji.ohmymoneyserver.domain.users.UsersQueryRepository
-com/najinji/ohmymoneyserver/domain/users/UsersRepositorySupport.java
- com.najinji.ohmymoneyserver.domain.users.UsersRepositorySupport
+com/najinji/ohmymoneyserver/web/dto/user/UserUpdateRequestDto.java
+ com.najinji.ohmymoneyserver.web.dto.user.UserUpdateRequestDto
+ com.najinji.ohmymoneyserver.web.dto.user.UserUpdateRequestDto$UserUpdateRequestDtoBuilder

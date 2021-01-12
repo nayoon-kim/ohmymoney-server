@@ -12,3 +12,5 @@ com/najinji/ohmymoneyserver/web/RecommenderControllerTest.java
  com.najinji.ohmymoneyserver.web.RecommenderControllerTest
 com/najinji/ohmymoneyserver/domain/users/BasicTest.java
  com.najinji.ohmymoneyserver.domain.users.BasicTest
+com/najinji/ohmymoneyserver/domain/place/PlaceRepositoryTest.java
+ com.najinji.ohmymoneyserver.domain.place.PlaceRepositoryTest

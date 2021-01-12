@@ -35,10 +35,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'junit:junit:4.12'
 
+//  redis
+    //compile('org.springframework.boot:spring-boot-starter-data-redis')
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('com.querydsl:querydsl-core') // querydsl
     compile('com.querydsl:querydsl-jpa') // querydsl
     compile 'mysql:mysql-connector-java'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
 

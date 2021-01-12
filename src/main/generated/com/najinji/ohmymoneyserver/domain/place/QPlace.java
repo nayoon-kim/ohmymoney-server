@@ -39,6 +39,8 @@ public class QPlace extends EntityPathBase<Place> {
 
     public final StringPath tag = createString("tag");
 
+    public final StringPath url = createString("url");
+
     public QPlace(String variable) {
         super(Place.class, forVariable(variable));
     }
