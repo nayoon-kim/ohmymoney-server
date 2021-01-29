@@ -16,14 +16,16 @@ public class PlaceSaveRequestDto {
     private String address;
     private String phone;
     private String tag;
+    private String details;
 
     @Builder
-    public PlaceSaveRequestDto(Category category, String name, String address, String phone, String tag) {
+    public PlaceSaveRequestDto(Category category, String name, String address, String phone, String tag, String details) {
         this.category = category;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.tag = tag;
+        this.details = details;
     }
 
     public Place toEntity() {
@@ -32,6 +34,7 @@ public class PlaceSaveRequestDto {
                 .address(address)
                 .phone(phone)
                 .tag(tag)
+                .details(details)
                 .build();
     }
 }

@@ -35,28 +35,33 @@ public class Place extends BaseTimeEntity {
     @Column(nullable = false)
     private String phone;
 
-    @Column(nullable = false)
+    @Column
     private String tag;
 
     @Column
     private String url;
 
+    @Column
+    private String details;
+
     @Builder
-    public Place(Category category, String name, String address, String newAddress, String phone, String tag, String url) {
+    public Place(Category category, String name, String address, String newAddress, String phone, String tag, String url, String details) {
         this.category = category;
         this.name = name;
         this.address = newAddress;
         this.phone = phone;
         this.tag = tag;
         this.url = url;
+        this.details = details;
     }
 
-    public Place update(String name, String address, String phone, String tag, String url) {
+    public Place update(String name, String address, String phone, String tag, String url, String details) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.tag = tag;
         this.url = url;
+        this.details = details;
         return this;
     }
 

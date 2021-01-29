@@ -13,13 +13,15 @@ public class PlaceUpdateRequestDto {
     private String phone;
     private String tag;
     private String url;
+    private String details;
 
     @Builder
-    public PlaceUpdateRequestDto(String name, String address, String phone, String tag, String url) {
+    public PlaceUpdateRequestDto(String name, String address, String phone, String tag, String url, String details) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.tag = tag;
         this.url = url;
+        this.details = details;
     }
 }
