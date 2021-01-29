@@ -54,7 +54,12 @@ public class PlaceService {
     }
 
     @Transactional
-    public List<PlaceResponseDto> query(String q) {
+    public List<PlaceResponseDto> searchPlaces(String q) {
         return placeRepository.findByNameContaining(q).stream().map(PlaceResponseDto::new).collect(Collectors.toList());
+    }
+
+    @Transactional
+    public List<PlaceResponseDto> findByNameIn(List<String> names) {
+        return placeRepository.findByNameIn(names).stream().map(PlaceResponseDto::new).collect(Collectors.toList());
     }
 }

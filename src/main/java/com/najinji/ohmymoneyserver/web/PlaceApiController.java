@@ -5,12 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.najinji.ohmymoneyserver.service.place.PlaceService;
@@ -36,21 +31,15 @@ public class PlaceApiController {
         return placeService.findById(id);
     }
 
-//    @GetMapping("/api/v1/place")
-//    public List<PlaceResponseDto> query(HttpServletRequest request) {
-//        String q = request.getParameter("q");
-//        return placeService.query(q);
-//    }
+    @GetMapping("/api/v1/place/search")
+    public List<PlaceResponseDto> searchPlaces(@RequestParam(value = "query") String query) {
+        return placeService.searchPlaces(query);
+    }
 
     @PostMapping("/api/v1/place")
     public PlaceResponseDto findByName(@RequestBody String place) throws ParseException {
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(place);
-        JSONObject jsonObject = (JSONObject) obj;
-
-        String _place = (String) jsonObject.get("name");
-
-        return placeService.findByName(_place);
+        place = (String)((JSONObject) new JSONParser().parse(place)).get("name");
+        return placeService.findByName(place);
     }
 
     @PutMapping("/api/v1/place/{id}")
