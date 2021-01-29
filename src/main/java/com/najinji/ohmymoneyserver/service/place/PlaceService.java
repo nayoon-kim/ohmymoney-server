@@ -30,7 +30,7 @@ public class PlaceService {
     @Transactional
     public Long update(Long id, PlaceUpdateRequestDto requestDto) {
         Place place = placeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = "+ id));
-        place.update(requestDto.getName(), requestDto.getAddress(), requestDto.getPhone(), requestDto.getTag(), requestDto.getUrl(), requestDto.getDetails());
+        place.update(requestDto.getName(), requestDto.getAddress(), requestDto.getPhone(), requestDto.getTag(), requestDto.getUrl(), requestDto.getSum(), requestDto.getDetails());
         return id;
     }
 

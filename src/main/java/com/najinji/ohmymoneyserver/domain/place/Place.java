@@ -42,25 +42,30 @@ public class Place extends BaseTimeEntity {
     private String url;
 
     @Column
+    private String sum;
+
+    @Column
     private String details;
 
     @Builder
-    public Place(Category category, String name, String address, String newAddress, String phone, String tag, String url, String details) {
+    public Place(Category category, String name, String address, String newAddress, String phone, String tag, String url, String sum, String details) {
         this.category = category;
         this.name = name;
         this.address = newAddress;
         this.phone = phone;
         this.tag = tag;
         this.url = url;
+        this.sum = sum;
         this.details = details;
     }
 
-    public Place update(String name, String address, String phone, String tag, String url, String details) {
+    public Place update(String name, String address, String phone, String tag, String url, String sum, String details) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.tag = tag;
         this.url = url;
+        this.sum = sum;
         this.details = details;
         return this;
     }

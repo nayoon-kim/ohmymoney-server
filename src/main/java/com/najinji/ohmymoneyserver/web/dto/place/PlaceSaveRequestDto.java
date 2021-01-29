@@ -16,15 +16,17 @@ public class PlaceSaveRequestDto {
     private String address;
     private String phone;
     private String tag;
+    private String sum;
     private String details;
 
     @Builder
-    public PlaceSaveRequestDto(Category category, String name, String address, String phone, String tag, String details) {
+    public PlaceSaveRequestDto(Category category, String name, String address, String phone, String tag, String sum, String details) {
         this.category = category;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.tag = tag;
+        this.sum = sum;
         this.details = details;
     }
 
@@ -34,6 +36,7 @@ public class PlaceSaveRequestDto {
                 .address(address)
                 .phone(phone)
                 .tag(tag)
+                .sum(sum)
                 .details(details)
                 .build();
     }

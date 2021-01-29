@@ -15,6 +15,7 @@ public class PlaceResponseDto {
     private String phone;
     private String tag;
     private String url;
+    private String sum;
     private String details;
 
     public PlaceResponseDto(Place entity) {
@@ -25,6 +26,7 @@ public class PlaceResponseDto {
         this.phone = entity.getPhone();
         this.tag = entity.getTag();
         this.url = entity.getUrl();
+        this.sum = entity.getSum();
         this.details = entity.getDetails();
     }
 }
