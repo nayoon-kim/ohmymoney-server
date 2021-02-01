@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -38,6 +39,10 @@ public class QPlace extends EntityPathBase<Place> {
     public final StringPath name = createString("name");
 
     public final StringPath phone = createString("phone");
+
+    public final CollectionPath<com.najinji.ohmymoneyserver.domain.picture.Picture, com.najinji.ohmymoneyserver.domain.picture.QPicture> picture = this.<com.najinji.ohmymoneyserver.domain.picture.Picture, com.najinji.ohmymoneyserver.domain.picture.QPicture>createCollection("picture", com.najinji.ohmymoneyserver.domain.picture.Picture.class, com.najinji.ohmymoneyserver.domain.picture.QPicture.class, PathInits.DIRECT2);
+
+    public final StringPath sum = createString("sum");
 
     public final StringPath tag = createString("tag");
 

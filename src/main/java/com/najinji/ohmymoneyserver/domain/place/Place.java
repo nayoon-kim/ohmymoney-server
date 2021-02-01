@@ -1,6 +1,10 @@
 package com.najinji.ohmymoneyserver.domain.place;
 
 import com.najinji.ohmymoneyserver.domain.BaseTimeEntity;
+import com.najinji.ohmymoneyserver.domain.picture.Picture;
+
+import java.util.Collection;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +16,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.CascadeType;
 
 @Getter
 @NoArgsConstructor
@@ -29,12 +37,11 @@ public class Place extends BaseTimeEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column
     private String address;
 
-    @Column(nullable = false)
+    @Column
     private String phone;
-
     @Column
     private String tag;
 
@@ -46,6 +53,10 @@ public class Place extends BaseTimeEntity {
 
     @Column
     private String details;
+
+    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="place_id")
+    private Collection<Picture> picture;
 
     @Builder
     public Place(Category category, String name, String address, String newAddress, String phone, String tag, String url, String sum, String details) {

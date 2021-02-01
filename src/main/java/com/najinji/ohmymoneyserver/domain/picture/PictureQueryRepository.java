@@ -21,7 +21,7 @@ public class PictureQueryRepository {
         List<Picture> pictures = new ArrayList<>();
         pictures = queryFactory
                 .selectFrom(picture)
-                .leftJoin(place, picture.place)
+                .where(picture.place_id.eq(id))
                 .fetch();
         return pictures;
     }

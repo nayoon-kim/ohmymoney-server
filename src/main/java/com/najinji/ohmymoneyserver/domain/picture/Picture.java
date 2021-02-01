@@ -5,13 +5,7 @@ import com.najinji.ohmymoneyserver.domain.place.Place;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
-import javax.persistence.Column;
+import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
@@ -25,7 +19,5 @@ public class Picture extends BaseTimeEntity {
     @Column(nullable = false)
     private String url;
 
-    @ManyToOne
-    @JoinColumn(name="place_id")
-    private Place place;
+    private Long place_id;
 }

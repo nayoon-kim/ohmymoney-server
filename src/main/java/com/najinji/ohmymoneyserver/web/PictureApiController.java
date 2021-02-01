@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 @RequiredArgsConstructor
 @RestController
@@ -26,8 +28,4 @@ public class PictureApiController {
         return pictureService.findById(id);
     }
 
-    @GetMapping("/api/v1/place/{id}/picture")
-    public List<PictureResponseDto> findByPlaceId(@PathVariable Long id) {
-        return pictureService.findByPlaceId(id);
-    }
 }
