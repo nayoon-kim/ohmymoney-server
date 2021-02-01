@@ -48,10 +48,10 @@ public class Place extends BaseTimeEntity {
     @Column
     private String url;
 
-    @Column
+    @Column(length=500)
     private String sum;
 
-    @Column
+    @Column(length=2000)
     private String details;
 
     @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
