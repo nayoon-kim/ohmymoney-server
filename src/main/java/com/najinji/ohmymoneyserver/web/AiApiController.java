@@ -54,7 +54,7 @@ public class AiApiController {
         }
 
         // 플라스크 서버 주소
-        String url = "http://ec2-52-79-141-244.ap-northeast-2.compute.amazonaws.com:5000/recommender";
+        String url = "http://ec2-54-180-122-125.ap-northeast-2.compute.amazonaws.com:5000/recommender";
 
         // http 통신 설정 (json 형태로 contenttype변경 및 post body에 input 삽입)
         HttpHeaders headers = new HttpHeaders();
