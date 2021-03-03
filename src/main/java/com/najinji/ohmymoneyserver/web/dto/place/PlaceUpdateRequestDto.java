@@ -15,9 +15,11 @@ public class PlaceUpdateRequestDto {
     private String url;
     private String sum;
     private String details;
+    private Double latitude;
+    private Double longitude;
 
     @Builder
-    public PlaceUpdateRequestDto(String name, String address, String phone, String tag, String url, String sum, String details) {
+    public PlaceUpdateRequestDto(String name, String address, String phone, String tag, String url, String sum, String details, Double latitude, Double longitude) {
         this.name = name;
         this.address = address;
         this.phone = phone;
@@ -25,5 +27,7 @@ public class PlaceUpdateRequestDto {
         this.url = url;
         this.sum = sum;
         this.details = details;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 }

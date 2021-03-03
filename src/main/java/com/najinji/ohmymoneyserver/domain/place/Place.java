@@ -42,6 +42,7 @@ public class Place extends BaseTimeEntity {
 
     @Column
     private String phone;
+
     @Column
     private String tag;
 
@@ -54,12 +55,18 @@ public class Place extends BaseTimeEntity {
     @Column(length=2000)
     private String details;
 
+    @Column
+    private Double latitude;
+
+    @Column
+    private Double longitude;
+
     @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="place_id")
     private Collection<Picture> picture;
 
     @Builder
-    public Place(Category category, String name, String address, String newAddress, String phone, String tag, String url, String sum, String details) {
+    public Place(Category category, String name, String address, String newAddress, String phone, String tag, String url, String sum, String details, Double latitude, Double longitude) {
         this.category = category;
         this.name = name;
         this.address = newAddress;
@@ -68,9 +75,11 @@ public class Place extends BaseTimeEntity {
         this.url = url;
         this.sum = sum;
         this.details = details;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
-    public Place update(String name, String address, String phone, String tag, String url, String sum, String details) {
+    public Place update(String name, String address, String phone, String tag, String url, String sum, String details, Double longitude, Double latitude) {
         this.name = name;
         this.address = address;
         this.phone = phone;
@@ -78,6 +87,8 @@ public class Place extends BaseTimeEntity {
         this.url = url;
         this.sum = sum;
         this.details = details;
+        this.latitude = latitude;
+        this.longitude = longitude;
         return this;
     }
 

@@ -1,5 +1,6 @@
 package com.najinji.ohmymoneyserver.domain;
 
+import com.najinji.ohmymoneyserver.domain.place.Place;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;

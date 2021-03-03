@@ -5,6 +5,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -13,6 +15,8 @@ import com.najinji.ohmymoneyserver.web.dto.place.PlaceResponseDto;
 import com.najinji.ohmymoneyserver.web.dto.place.PlaceUpdateRequestDto;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -20,6 +24,7 @@ import java.util.List;
 public class PlaceApiController {
 
     private final PlaceService placeService;
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/api/v1/place")
     public List<PlaceResponseDto> findAll() {
@@ -37,9 +42,9 @@ public class PlaceApiController {
     }
 
     @PostMapping("/api/v1/place")
-    public PlaceResponseDto findByName(@RequestBody String place) throws ParseException {
-        place = (String)((JSONObject) new JSONParser().parse(place)).get("name");
-        return placeService.findByName(place);
+    public PlaceResponseDto findByName(@RequestBody String place) throws ParseException{
+        String name = String.valueOf(((JSONObject) new JSONParser().parse(place)).get("name"));
+        return placeService.findByName(name);
     }
 
     @PutMapping("/api/v1/place/{id}")

@@ -14,12 +14,12 @@ import java.util.ArrayList;
 public class PlaceQueryRepository {
     private final JPAQueryFactory queryFactory;
 
-    public Place findByName(String name) {
-        List<Place> places = new ArrayList<>();
-        places = queryFactory
-                .selectFrom(place)
-                .where(place.name.eq(name))
-                .fetch();
-        return places.get(0);
-    }
+//    public Place findByName(String name) {
+//        List<Place> places = new ArrayList<>();
+//        places = queryFactory
+//                .selectFrom(place)
+//                .where(place.name.eq(name))
+//                .fetch();
+//        return places.get(0);
+//    }
 }

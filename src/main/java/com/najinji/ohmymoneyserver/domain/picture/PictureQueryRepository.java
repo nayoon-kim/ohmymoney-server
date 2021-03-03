@@ -3,6 +3,7 @@ package com.najinji.ohmymoneyserver.domain.picture;
 import static com.najinji.ohmymoneyserver.domain.picture.QPicture.picture;
 import static com.najinji.ohmymoneyserver.domain.place.QPlace.place;
 
+import com.querydsl.core.types.Projections;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -25,4 +26,5 @@ public class PictureQueryRepository {
                 .fetch();
         return pictures;
     }
+
 }
