@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'lottemarthappy';
+    src:url("../fonts/lottemarthappy.eot");
+    src:url("../fonts/lottemarthappy.ttf") format('truetype'),
+    url("../fonts/12LotteMartHLight.svg") format('svg'),
+    url("../fonts/12LotteMartHLight.otf") format('opentype'),
+    url("../fonts/12LotteMartHLight.woff") format('font-woff'),
+    url("../fonts/lottemarthappy.woff2") format('woff2'),
+    url("../fonts/lottemarthappy.eot?#iefix") format('embedded-opentype');
+}

@@ -21,4 +21,10 @@ public class Picture extends BaseTimeEntity {
 
     @Column
     private Long place_id;
+
+    @Override
+    public String toString() {
+        return url;
+    }
+
 }

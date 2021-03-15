@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import com.najinji.ohmymoneyserver.domain.user.Role;
 
 @RequiredArgsConstructor
 @EnableWebSecurity
@@ -19,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().disable()
                 .and()
                     .authorizeRequests()
-                    .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/ai", "/api/v1/**").permitAll()
+                    .antMatchers("/","/test", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/ai", "/api/v1/**", "/place/**", "/fonts/**", "/svg/**").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .logout()

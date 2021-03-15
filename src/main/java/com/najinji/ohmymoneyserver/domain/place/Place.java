@@ -4,6 +4,7 @@ import com.najinji.ohmymoneyserver.domain.BaseTimeEntity;
 import com.najinji.ohmymoneyserver.domain.picture.Picture;
 
 import java.util.Collection;
+import java.util.List;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -63,7 +64,7 @@ public class Place extends BaseTimeEntity {
 
     @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="place_id")
-    private Collection<Picture> picture;
+    private List<Picture> picture;
 
     @Builder
     public Place(Category category, String name, String address, String newAddress, String phone, String tag, String url, String sum, String details, Double latitude, Double longitude) {

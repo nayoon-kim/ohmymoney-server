@@ -6,6 +6,7 @@ import lombok.Getter;
 import com.najinji.ohmymoneyserver.domain.place.Place;
 
 import java.util.Collection;
+import java.util.List;
 
 @Getter
 public class PlaceResponseDto {
@@ -20,7 +21,7 @@ public class PlaceResponseDto {
     private String details;
     private Double latitude;
     private Double longitude;
-    private Collection<Picture> picture;
+    private List<Picture> picture;
 
     public PlaceResponseDto(Place entity) {
         this.id = entity.getId();
@@ -34,5 +35,15 @@ public class PlaceResponseDto {
         this.latitude = entity.getLatitude();
         this.longitude = entity.getLongitude();
         this.picture = entity.getPicture();
+    }
+    public String toString(){
+        String str = "PlaceResponseDto [id= " + String.valueOf(id) + ", picture= ";
+
+        for (Picture p: picture) {
+            str += p.getUrl() + " ";
+        }
+
+        str += "]";
+        return str;
     }
 }
