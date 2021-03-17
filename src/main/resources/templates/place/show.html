@@ -9,8 +9,8 @@
     <title th:text="${title}">Title</title>
     <link th:href="@{/css/fonts.css}" type="text/css" rel="stylesheet"/>
 </head>
-<div class="ml-3 mr-3 d-flex justify-content-center row bg-dark">
-    <div class="col-lg-8 col-md-10 col-sm-3">
+<div class="d-flex p-2 justify-content-center row bg-dark">
+    <div class="col-12">
         <h4 class="mt-3 font-weight-bold text-light text-center" style="font-family: lottemarthappy;" th:text="${place.getName()}"></h4>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -50,7 +50,7 @@
             <p class="mt-3 text-primary" style="font-family: lottemarthappy;" th:text="${tag}"></p>
             <hr style="background-color: white;"/>
             <h6 class="font-weight-bold text-light" style="font-family: lottemarthappy;">기본정보</h6>
-            <table class="table table-borderless table-dark">
+            <table class="table table-borderless">
                 <tbody>
                     <tr>
                         <th scope="row">
