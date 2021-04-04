@@ -40,6 +40,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
 //  redis
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 
     compile('com.querydsl:querydsl-core') // querydsl
     compile('com.querydsl:querydsl-jpa') // querydsl

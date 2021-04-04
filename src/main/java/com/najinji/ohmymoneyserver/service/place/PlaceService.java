@@ -1,5 +1,7 @@
 package com.najinji.ohmymoneyserver.service.place;
 
+import com.najinji.ohmymoneyserver.domain.redis.redisplace.RedisPlace;
+import com.najinji.ohmymoneyserver.domain.redis.redisplace.RedisPlaceRepository;
 import lombok.RequiredArgsConstructor;
 
 import org.json.simple.JSONArray;
@@ -32,6 +34,7 @@ public class PlaceService {
 
     private final PlaceRepository placeRepository;
     private final PlaceQueryRepository placeQueryRepository;
+    private final RedisPlaceRepository redisPlaceRepository;
     private RestTemplate restTemplate;
 
     @Transactional
@@ -77,9 +80,10 @@ public class PlaceService {
         return placeRepository.findByNameIn(names).stream().map(PlaceResponseDto::new).collect(Collectors.toList());
     }
 
-//    @Transactional
-//    public List<PlaceResponseDto> recommendByFlask(String name) throws ParseException {
-//
-//        return placeRepository.findByNameIn(names).stream().map(PlaceResponseDto::new).collect(Collectors.toList());
-//    }
+    @Transactional
+    public List<PlaceResponseDto> recommendByFlask(String id) throws ParseException {
+
+        RedisPlace redisPlace = redisPlaceRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = " + id));
+        return placeRepository.findByNameIn(redisPlace.getPlaces()).stream().map(PlaceResponseDto::new).collect(Collectors.toList());
+    }
 }

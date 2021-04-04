@@ -46,7 +46,7 @@ public class Scheduler {
     public void task2() {
         List<Place> places = placeRepository.findAll();
 // = "http://3.36.136.219:5000/recommender";
-        String url = "http://3.36.136.219:5000";
+        String url = "http://localhost:5000";
         webClient = WebClient.builder().baseUrl(url).build();
 
         for (Place place: places) {
@@ -55,10 +55,9 @@ public class Scheduler {
 
             // flask 서버에 request해서 5개의 추천 명소를 받아옴.
             this.webClient
-                    .post()
-                    .uri("/recommender")
-                    .header("name", id)
-                    .contentType(MediaType.APPLICATION_JSON)
+                    .get()
+                    .uri("/recommender?name={id}", id)
+//                    .contentType(MediaType.APPLICATION_JSON)
                     .retrieve()
                     .bodyToMono(String.class)
                     .subscribe(s -> {
@@ -76,15 +75,19 @@ public class Scheduler {
                             recommended_places.add((String) jsonArray.get(i));
 
                         RedisPlace redisPlace;
-                        if (redisPlaceRepository.findById(id).get() != null) {
-                            redisPlace = redisPlaceRepository.findById(id).get();
-                            redisPlace.update(recommended_places);
-                        } else{
-                            redisPlace = RedisPlace.builder()
-                                    .id(id)
-                                    .places(recommended_places)
-                                    .build();
-                        }
+                        redisPlace = RedisPlace.builder()
+                                .id(id)
+                                .places(recommended_places)
+                                .build();
+//                        if (redisPlaceRepository.findById(id).get() != null) {
+//                            redisPlace = redisPlaceRepository.findById(id).get();
+//                            redisPlace.update(recommended_places);
+//                        } else{
+//                            redisPlace = RedisPlace.builder()
+//                                    .id(id)
+//                                    .places(recommended_places)
+//                                    .build();
+//                        }
                         redisPlaceRepository.save(redisPlace);
                         System.out.println(redisPlace);
                     });
