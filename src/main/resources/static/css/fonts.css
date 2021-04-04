@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'lottemarthappy';
-    src:url("../fonts/lottemarthappy.eot");
-    src:url("../fonts/lottemarthappy.ttf") format('truetype'),
+    src: url("../fonts/lottemarthappy.eot");
+    src: url("../fonts/lottemarthappy.ttf") format('truetype'),
     url("../fonts/12LotteMartHLight.svg") format('svg'),
     url("../fonts/12LotteMartHLight.otf") format('opentype'),
     url("../fonts/12LotteMartHLight.woff") format('font-woff'),

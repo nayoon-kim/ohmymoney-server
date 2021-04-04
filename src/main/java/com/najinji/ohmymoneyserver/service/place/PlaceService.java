@@ -2,8 +2,15 @@ package com.najinji.ohmymoneyserver.service.place;
 
 import lombok.RequiredArgsConstructor;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.json.simple.parser.ParseException;
 
 import com.najinji.ohmymoneyserver.domain.place.Place;
 import com.najinji.ohmymoneyserver.domain.place.PlaceRepository;
@@ -11,8 +18,12 @@ import com.najinji.ohmymoneyserver.domain.place.PlaceQueryRepository;
 import com.najinji.ohmymoneyserver.web.dto.place.PlaceSaveRequestDto;
 import com.najinji.ohmymoneyserver.web.dto.place.PlaceUpdateRequestDto;
 import com.najinji.ohmymoneyserver.web.dto.place.PlaceResponseDto;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -21,6 +32,7 @@ public class PlaceService {
 
     private final PlaceRepository placeRepository;
     private final PlaceQueryRepository placeQueryRepository;
+    private RestTemplate restTemplate;
 
     @Transactional
     public Long save(PlaceSaveRequestDto requestDto) {
@@ -29,7 +41,7 @@ public class PlaceService {
 
     @Transactional
     public Long update(Long id, PlaceUpdateRequestDto requestDto) {
-        Place place = placeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = "+ id));
+        Place place = placeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = " + id));
         place.update(requestDto.getName(), requestDto.getAddress(), requestDto.getPhone()
                 , requestDto.getTag(), requestDto.getUrl(), requestDto.getSum(), requestDto.getDetails()
                 , requestDto.getLatitude(), requestDto.getLongitude());
@@ -64,4 +76,10 @@ public class PlaceService {
     public List<PlaceResponseDto> findByNameIn(List<String> names) {
         return placeRepository.findByNameIn(names).stream().map(PlaceResponseDto::new).collect(Collectors.toList());
     }
+
+//    @Transactional
+//    public List<PlaceResponseDto> recommendByFlask(String name) throws ParseException {
+//
+//        return placeRepository.findByNameIn(names).stream().map(PlaceResponseDto::new).collect(Collectors.toList());
+//    }
 }

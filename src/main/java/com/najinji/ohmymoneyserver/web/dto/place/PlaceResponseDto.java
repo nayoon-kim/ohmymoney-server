@@ -36,10 +36,11 @@ public class PlaceResponseDto {
         this.longitude = entity.getLongitude();
         this.picture = entity.getPicture();
     }
-    public String toString(){
+
+    public String toString() {
         String str = "PlaceResponseDto [id= " + String.valueOf(id) + ", picture= ";
 
-        for (Picture p: picture) {
+        for (Picture p : picture) {
             str += p.getUrl() + " ";
         }
 

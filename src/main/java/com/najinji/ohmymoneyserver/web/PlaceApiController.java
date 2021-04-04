@@ -37,7 +37,7 @@ public class PlaceApiController {
     }
 
     @PostMapping("/api/v1/place")
-    public PlaceResponseDto findByName(@RequestBody String place) throws ParseException{
+    public PlaceResponseDto findByName(@RequestBody String place) throws ParseException {
         String name = String.valueOf(((JSONObject) new JSONParser().parse(place)).get("name"));
         return placeService.findByName(name);
     }
@@ -47,4 +47,8 @@ public class PlaceApiController {
         return placeService.update(id, requestDto);
     }
 
+//    @PostMapping("/api/v1/place/recommend")
+//    public List<PlaceResponseDto> recommendByFlask(@RequestBody String place) throws ParseException {
+//        return placeService.recommendByFlask(place);
+//    }
 }

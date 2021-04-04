@@ -18,11 +18,11 @@ public class Bookmark extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="place_id")
+    @JoinColumn(name = "place_id")
     private Place place;
 
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="user_id")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Builder

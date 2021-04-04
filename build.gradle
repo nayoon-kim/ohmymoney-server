@@ -37,13 +37,15 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-tomcat'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 //  redis
-    //compile('org.springframework.boot:spring-boot-starter-data-redis')
-    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
     compile('com.querydsl:querydsl-core') // querydsl
     compile('com.querydsl:querydsl-jpa') // querydsl
     compile 'mysql:mysql-connector-java'
+
+    implementation 'it.ozimov:embedded-redis:0.7.2'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
@@ -58,10 +60,10 @@ dependencies {
 
 // querydsl 적용
 
-def generated='src/main/generated'
+def generated = 'src/main/generated'
 
 sourceSets {
-    main.java.srcDirs += [ generated ]
+    main.java.srcDirs += [generated]
 }
 
 tasks.withType(JavaCompile) {

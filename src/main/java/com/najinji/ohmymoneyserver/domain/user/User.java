@@ -5,6 +5,7 @@ import com.najinji.ohmymoneyserver.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.Entity;
 import javax.persistence.Column;
@@ -23,25 +24,40 @@ public class User extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    @Column
+    private Type type;
+
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Column
     private String picture;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Role role;
+    @Column
+    private Gender gender;
+
+//    @Enumerated(EnumType.STRING)
+//    @Column
+//    private Role role;
+
+    @Column
+    private int age;
+
+    @Column
+    private String residence;
 
     @Builder
-    public User(String name, String email, String picture, Role role) {
+    public User(Type type, String name, String email, Gender gender, String picture) {
+        this.type = type;
         this.name = name;
         this.email = email;
+        this.gender = gender;
         this.picture = picture;
-        this.role = role;
     }
 
     public User update(String name, String picture) {
@@ -50,7 +66,13 @@ public class User extends BaseTimeEntity {
         return this;
     }
 
-    public String getRoleKey() {
-        return this.role.getKey();
+    public User update(Gender gender, int age, String residence) {
+        this.gender = gender;
+        this.age = age;
+        this.residence = residence;
+        return this;
     }
+
+    public String getAccessType() { return this.type.getAccessType(); }
+//    public String getRoleKey() { return this.role.getKey(); }
 }

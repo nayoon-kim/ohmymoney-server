@@ -50,10 +50,10 @@ public class Place extends BaseTimeEntity {
     @Column
     private String url;
 
-    @Column(length=500)
+    @Column(length = 500)
     private String sum;
 
-    @Column(length=2000)
+    @Column(length = 2000)
     private String details;
 
     @Column
@@ -62,8 +62,8 @@ public class Place extends BaseTimeEntity {
     @Column
     private Double longitude;
 
-    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="place_id")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "place_id")
     private List<Picture> picture;
 
     @Builder
@@ -95,5 +95,10 @@ public class Place extends BaseTimeEntity {
 
     public String getCategoryKey() {
         return this.category.getKey();
+    }
+
+    @Override
+    public String toString() {
+        return "Place id: " + String.valueOf(id) + ", name: " + name;
     }
 }

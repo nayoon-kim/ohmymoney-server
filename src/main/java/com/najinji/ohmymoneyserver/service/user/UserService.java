@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.SQLIntegrityConstraintViolationException;
+
 @RequiredArgsConstructor
 @Service
 public class UserService {
@@ -18,19 +20,28 @@ public class UserService {
 
     @Transactional
     public Long save(UserSaveRequestDto requestDto) {
-        return userRepository.save(requestDto.toEntity()).getId();
+        User user = userRepository.findByEmail(requestDto.getEmail())
+                .orElse(userRepository.save(requestDto.toEntity()));
+        return user.getId();
     }
 
     @Transactional
     public Long update(Long id, UserUpdateRequestDto requestDto) {
-        User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = " + id));
-        user.update(requestDto.getName(), requestDto.getPicture());
-        return id;
+        User user = userRepository.findById(id)
+                .map(entity -> entity.update(requestDto.getGender(), requestDto.getAge(), requestDto.getResidence()))
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = " + id));
+        return user.getId();
     }
 
     @Transactional
     public UserResponseDto findById(Long id) {
         User entity = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = " + id));
+        return new UserResponseDto(entity);
+    }
+
+    @Transactional
+    public UserResponseDto findByEmail(String email) {
+        User entity = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. email = " + email));
         return new UserResponseDto(entity);
     }
 }

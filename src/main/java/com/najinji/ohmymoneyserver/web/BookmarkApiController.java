@@ -5,6 +5,7 @@ import com.najinji.ohmymoneyserver.web.dto.bookmark.BookmarkSaveRequestDto;
 import com.najinji.ohmymoneyserver.web.dto.bookmark.BookmarkResponseDto;
 
 import lombok.RequiredArgsConstructor;
+
 import java.util.List;
 
 import org.springframework.web.bind.annotation.*;

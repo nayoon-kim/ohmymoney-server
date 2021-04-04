@@ -19,7 +19,7 @@ public class UserApiController {
 
     private final UserService userService;
 
-    @PostMapping("/api/v1/user-j")
+    @PostMapping("/api/v1/user")
     public Long save(@RequestBody UserSaveRequestDto requestDto) {
         return userService.save(requestDto);
     }
@@ -30,7 +30,11 @@ public class UserApiController {
     }
 
     @GetMapping("/api/v1/user/{id}")
-    public UserResponseDto findById (@PathVariable Long id) {
+    public UserResponseDto findById(@PathVariable Long id) {
         return userService.findById(id);
+    }
+    @GetMapping("/api/v1/user/email/{email}")
+    public UserResponseDto findByEmail(@PathVariable String email) {
+        return userService.findByEmail(email);
     }
 }
