@@ -1,0 +1,2 @@
+com/najinji/ohmymoneyserver/OhmymoneyServerApplicationTests.java
+ com.najinji.ohmymoneyserver.OhmymoneyServerApplicationTests
