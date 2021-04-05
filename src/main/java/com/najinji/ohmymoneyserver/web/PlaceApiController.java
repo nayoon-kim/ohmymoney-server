@@ -49,6 +49,7 @@ public class PlaceApiController {
 
     @PostMapping("/api/v1/place/recommend")
     public List<PlaceResponseDto> recommendByFlask(@RequestBody String place) throws ParseException {
-        return placeService.recommendByFlask(place);
+        String name = String.valueOf(((JSONObject) new JSONParser().parse(place)).get("name"));
+        return placeService.recommendByFlask(name);
     }
 }

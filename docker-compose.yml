@@ -12,3 +12,14 @@ services:
     build: .
     ports:
       - 8080:8080
+  redis:
+    image: redis:latest
+    container_name: redis01
+    ports:
+      - '6379:6379'
+    command: redis-server
+    healthcheck:
+      test: "redis-cli -h 0.0.0.0 ping"
+      interval: 3s
+      timeout: 1s
+      retries: 5

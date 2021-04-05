@@ -45,8 +45,8 @@ public class Scheduler {
     @Scheduled(fixedDelay = 100000)
     public void task2() {
         List<Place> places = placeRepository.findAll();
-// = "http://3.36.136.219:5000/recommender";
         String url = "http://localhost:5000";
+
         webClient = WebClient.builder().baseUrl(url).build();
 
         for (Place place: places) {
@@ -57,7 +57,6 @@ public class Scheduler {
             this.webClient
                     .get()
                     .uri("/recommender?name={id}", id)
-//                    .contentType(MediaType.APPLICATION_JSON)
                     .retrieve()
                     .bodyToMono(String.class)
                     .subscribe(s -> {
@@ -79,15 +78,7 @@ public class Scheduler {
                                 .id(id)
                                 .places(recommended_places)
                                 .build();
-//                        if (redisPlaceRepository.findById(id).get() != null) {
-//                            redisPlace = redisPlaceRepository.findById(id).get();
-//                            redisPlace.update(recommended_places);
-//                        } else{
-//                            redisPlace = RedisPlace.builder()
-//                                    .id(id)
-//                                    .places(recommended_places)
-//                                    .build();
-//                        }
+
                         redisPlaceRepository.save(redisPlace);
                         System.out.println(redisPlace);
                     });

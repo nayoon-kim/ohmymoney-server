@@ -22,10 +22,7 @@ import com.najinji.ohmymoneyserver.web.dto.place.PlaceUpdateRequestDto;
 import com.najinji.ohmymoneyserver.web.dto.place.PlaceResponseDto;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -35,7 +32,6 @@ public class PlaceService {
     private final PlaceRepository placeRepository;
     private final PlaceQueryRepository placeQueryRepository;
     private final RedisPlaceRepository redisPlaceRepository;
-    private RestTemplate restTemplate;
 
     @Transactional
     public Long save(PlaceSaveRequestDto requestDto) {
@@ -65,8 +61,6 @@ public class PlaceService {
 
     @Transactional
     public List<PlaceResponseDto> findAll() {
-        // placeRepository.findAll() -> List<Place>
-        // .stream().map(PlaceResponseDto::new).collect(Collectors.toList()) -> List<PlaceResponseDto>
         return placeRepository.findAll().stream().map(PlaceResponseDto::new).collect(Collectors.toList());
     }
 
@@ -82,7 +76,6 @@ public class PlaceService {
 
     @Transactional
     public List<PlaceResponseDto> recommendByFlask(String id) throws ParseException {
-
         RedisPlace redisPlace = redisPlaceRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = " + id));
         return placeRepository.findByNameIn(redisPlace.getPlaces()).stream().map(PlaceResponseDto::new).collect(Collectors.toList());
     }
